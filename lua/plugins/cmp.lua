@@ -1,3 +1,5 @@
+-- lua/plugins/cmp.lua
+
 return {
   "hrsh7th/nvim-cmp",
   dependencies = {
@@ -9,23 +11,52 @@ return {
   },
   config = function()
     local cmp = require("cmp")
-    cmp.setup {
+    local luasnip = require("luasnip") 
+
+    cmp.setup({
       snippet = {
         expand = function(args)
-          require("luasnip").lsp_expand(args.body)
+          luasnip.lsp_expand(args.body)
         end,
       },
-      mapping = cmp.mapping.preset.insert({
-        ["<Tab>"] = cmp.mapping.confirm({ select = true }),
+
+      mapping = {
+        -- Navigate menu with arrows
+        ["<Up>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),
+        ["<Down>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),
+
+        -- Confirm with Enter or Right
+        ["<CR>"] = cmp.mapping.confirm({ select = true }),
+        ["<Right>"] = cmp.mapping.confirm({ select = true }),
+
+        -- Manual trigger
         ["<C-Space>"] = cmp.mapping.complete(),
-      }),
-      sources = {
+
+        -- Tab / Shift-Tab for snippet placeholders
+        ["<Tab>"] = cmp.mapping(function(fallback)
+          if luasnip.expand_or_jumpable() then
+            luasnip.expand_or_jump()
+          else
+            fallback()
+          end
+        end, { "i", "s" }),
+
+        ["<S-Tab>"] = cmp.mapping(function(fallback)
+          if luasnip.jumpable(-1) then
+            luasnip.jump(-1)
+          else
+            fallback()
+          end
+        end, { "i", "s" }),
+      },
+
+      sources = cmp.config.sources({
         { name = "nvim_lsp" },
         { name = "luasnip" },
         { name = "buffer" },
         { name = "path" },
-      },
-    }
+      }),
+    })
   end,
 }
 
