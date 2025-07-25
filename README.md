@@ -1,7 +1,11 @@
 <p align="center">
     <img src="assets/cc-neovim.jpg" alt="cc-neovim logo" />
 
-_Modular, headless-first Neovim configuration built for fast, minimalist C/C++ development._
+[![GitHub Pages](https://img.shields.io/badge/View%20Site-cc--neovim-blue?style=flat-square)](https://zimmerman-dev.github.io/cc-neovim)
+![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+![Version](https://img.shields.io/github/v/tag/zimmerman-dev/cc-neovim?label=version&style=flat-square)
+
+>_Modular, headless-first Neovim configuration built for fast, minimalist C/C++ development._
 
 ## ✨ Features
 
