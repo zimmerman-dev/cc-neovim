@@ -1,21 +1,17 @@
 <p align="center">
     <img src="assets/cc-neovim.jpg" alt="cc-neovim logo" />
 
-# 📦 cc-neovim
-
 _Modular, headless-first Neovim configuration built for fast, minimalist C/C++ development._
 
----
 
-### 🚀 Features
+## 🚀 Features
 
 - ✨ Lazy plug-in installer
 - 🔧 ?
 - 📁 
 
----
 
-### 📁 Project Structure
+## 📁 Project Structure
 
 ```
 cc-neovim
@@ -32,19 +28,19 @@ cc-neovim
 └── README.md
 ```
 
----
 
-### 🛠️ Requirements
+
+## 🛠️ Requirements
 
 - 
 - 
 - A working compiler (e.g. `g++`, `clang++`)
 
----
 
-### 🚧 Build Instructions
+
+## 🚧 Build Instructions
 
 ```
 ```
-### 📜 License 
+## 📜 License 
 This project is licensed under the MIT License.
