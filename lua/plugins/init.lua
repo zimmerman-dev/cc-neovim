@@ -6,4 +6,6 @@ return {
   require("plugins.plenary"),
   require("colorscheme.tokyonight"),
   require("plugins.lualine"),
+  require("plugins.lsp"),
+  require("plugins.cmp"),
 }
