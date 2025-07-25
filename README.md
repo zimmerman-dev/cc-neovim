@@ -1,33 +1,42 @@
+<p align="center">
+    <img src="assets/cc-neovim.jpg" width="300" alt="cc-neovim logo" />
 # 📦 cc-neovim
 
-_A one-liner description of what this project does and who it’s for._
+_Modular, headless-first Neovim configuration built for fast, minimalist C/C++ development._
 
 ---
 
 ## 🚀 Features
 
-- ✨ Feature 1
-- 🔧 Feature 2
-- 📁 Feature 3
+- ✨ Lazy plug-in installer
+- 🔧 ?
+- 📁 
 
 ---
 
 ## 📁 Project Structure
 
-``` 
-project-root/
-├── src/ # Source files
-├── include/ # Header files (optional)
-├── CMakeLists.txt # Build configuration
-└── README.md # You're here
+```
+cc-neovim
+├── init.lua
+├── LICENSE
+├── lua
+│   ├── core
+│   │   ├── autocommads.lua
+│   │   ├── keymaps.lua
+│   │   ├── lazy.lua
+│   │   └── options.lua
+│   └── plugins
+│       └── init.lua
+└── README.md
 ```
 
 ---
 
 ## 🛠️ Requirements
 
-- C++17 or newer
-- CMake 3.16+
+- 
+- 
 - A working compiler (e.g. `g++`, `clang++`)
 
 ---
@@ -35,12 +44,6 @@ project-root/
 ## 🚧 Build Instructions
 
 ```
-mkdir -p build
-cd build
-cmake ..
-make
-./your_executable_name
-
 ```
 ## 📜 License 
 This project is licensed under the MIT License.
