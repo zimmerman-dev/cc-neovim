@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#1a1b26" />
+  <title>cc-neovim</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: monospace;
+      background-color: #1a1b26;
+      color: #c0caf5;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    header {
+      text-align: center;
+      white-space: pre;
+      color: #7aa2f7;
+      margin-bottom: 2rem;
+    }
+    section {
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      padding: 1rem;
+      border: 1px dashed #414868;
+      border-radius: 0.5rem;
+      background-color: #24283b;
+    }
+    h2 {
+      margin-bottom: 0.5rem;
+      color: #9ece6a;
+    }
+    p, ul {
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+    }
+    a {
+      color: #7dcfff;
+      text-decoration: none;
+    }
+    
+    .three-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 6rem;
+  flex-wrap: wrap;
+  margin-top: 12rem;
+}
+
+.column {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* this is the magic line */
+  text-align: center;  /* optional, for centering text elements */
+}
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+td, th {
+  text-align: center;
+}
+
+footer {
+  margin-top: 6rem;
+  font-size: 0.85rem;
+  color: #565f89;
+  text-align: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+  </style>
+</head>
+<body>
+    <header>
+    <code>
+    ad888                                                                                                         888ba     
+    88'                                                                                      88                     `88     
+    88                                                                                       ""                      88     
+    88                                                                                                               88     
+   ,8P   ,adPPYba,   ,adPPYba,            8b,dPPYba,    ,adPPYba,   ,adPPYba,   8b       d8  88  88,dPYba,,adPYba,   Y8,    
+  88(   a8"     ""  a8"     ""  aaaaaaaa  88P'   `"8a  a8P_____88  a8"     "8a  `8b     d8'  88  88P'   "88"    "8a   )88   
+   "8b  8b          8b          """"""""  88       88  8PP"""""""  8b       d8   `8b   d8'   88  88      88      88  d8"    
+    88  "8a,   ,aa  "8a,   ,aa            88       88  "8b,   ,aa  "8a,   ,a8"    `8b,d8'    88  88      88      88  88     
+    88   `"Ybbd8"'   `"Ybbd8"'            88       88   `"Ybbd8"'   `"YbbdP"'       "8"      88  88      88      88  88     
+    88,                                                                                                             ,88    
+    "Y888                                                                                                         888P"    
+   
+    </code>
+    <p>a minimal, headless-first Neovim config for C++ devs</p>
+  </header>
+ 
+  <div class="three-columns">
+  <div class="column">
+    <h2>Features</h2>
+    <ul>
+      <li>Minimalist IDE experience</li>
+      <li>Lua-powered configuration</li>
+      <li>Works in headless and TUI setups</li>
+    </ul>
+  </div>
+
+  <div class="column">
+    <h2>Quick Install</h2>
+    <pre><code>git clone ...</code></pre>
+    <p>Run Neovim and let Lazy install plugins.</p>
+  </div>
+
+  <div class="column">
+  <h2 style="text-align: center;">Keybinds</h2>
+  <table style="margin: 0 auto;">
+          <tr><th>Key</th><th>Action</th></tr>
+      <tr><td>SPC f s</td><td>Save file</td></tr>
+      <tr><td>SPC q q</td><td>Quit Neovim</td></tr>
+  </table>
+</div>
+
+  <footer>
+    Made with ☕ &  cc-neovim © 2025 · <a href="https://github.com/zimmerman-dev">@zimmerman-dev</a>
+  </footer>
+</body>
+</html>
