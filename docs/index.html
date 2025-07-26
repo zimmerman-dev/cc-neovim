@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="theme-color" content="#1a1b26" />
+<html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#1a1b26">
   <title>cc-neovim</title>
   <style>
     * {
@@ -13,7 +12,7 @@
     }
     body {
       font-family: monospace;
-      background-color: #1a1b26;
+      background-color: #00000B;
       color: #c0caf5;
       display: flex;
       flex-direction: column;
@@ -22,11 +21,15 @@
       min-height: 100vh;
       padding: 2rem;
     }
+    img {
+      border-radius: 15px;
+      margin-bottom: 2rem;
+    }
     header {
       text-align: center;
       white-space: pre;
       color: #7aa2f7;
-      margin-bottom: 2rem;
+      margin-bottom: 6rem;
     }
     section {
       max-width: 800px;
@@ -48,13 +51,13 @@
       color: #7dcfff;
       text-decoration: none;
     }
-    
+
     .three-columns {
   display: flex;
   justify-content: space-between;
   gap: 6rem;
   flex-wrap: wrap;
-  margin-top: 12rem;
+  margin-top: 4rem;
 }
 
 .column {
@@ -74,7 +77,7 @@ td, th {
 }
 
 footer {
-  margin-top: 6rem;
+  margin-top: 2rem;
   font-size: 0.85rem;
   color: #565f89;
   text-align: center;
@@ -87,23 +90,11 @@ footer {
 </head>
 <body>
     <header>
-    <code>
-    ad888                                                                                                         888ba     
-    88'                                                                                      88                     `88     
-    88                                                                                       ""                      88     
-    88                                                                                                               88     
-   ,8P   ,adPPYba,   ,adPPYba,            8b,dPPYba,    ,adPPYba,   ,adPPYba,   8b       d8  88  88,dPYba,,adPYba,   Y8,    
-  88(   a8"     ""  a8"     ""  aaaaaaaa  88P'   `"8a  a8P_____88  a8"     "8a  `8b     d8'  88  88P'   "88"    "8a   )88   
-   "8b  8b          8b          """"""""  88       88  8PP"""""""  8b       d8   `8b   d8'   88  88      88      88  d8"    
-    88  "8a,   ,aa  "8a,   ,aa            88       88  "8b,   ,aa  "8a,   ,a8"    `8b,d8'    88  88      88      88  88     
-    88   `"Ybbd8"'   `"Ybbd8"'            88       88   `"Ybbd8"'   `"YbbdP"'       "8"      88  88      88      88  88     
-    88,                                                                                                             ,88    
-    "Y888                                                                                                         888P"    
-   
-    </code>
-    <p>a minimal, headless-first Neovim config for C++ devs</p>
+    <img src="../assets/cc-neovim1.png" width="1000">
+    <p>a minimal, headless-first Neovim for C/C++ development</p>
+
   </header>
- 
+
   <div class="three-columns">
   <div class="column">
     <h2>Features</h2>
@@ -123,14 +114,17 @@ footer {
   <div class="column">
   <h2 style="text-align: center;">Keybinds</h2>
   <table style="margin: 0 auto;">
-          <tr><th>Key</th><th>Action</th></tr>
+          <tbody><tr><th>Key</th><th>Action</th></tr>
       <tr><td>SPC f s</td><td>Save file</td></tr>
       <tr><td>SPC q q</td><td>Quit Neovim</td></tr>
-  </table>
+  </tbody></table>
 </div>
 
   <footer>
-    Made with ☕ &  cc-neovim © 2025 · <a href="https://github.com/zimmerman-dev">@zimmerman-dev</a>
+      Made with · ·&emsp;cc-neovim © 2025 · ·&emsp;<a href="https://github.com/zimmerman-dev/cc-neovim">@zimmerman-dev</a>
   </footer>
-</body>
+
+
+</div></body></html>
+
 </html>
