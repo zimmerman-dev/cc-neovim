@@ -32,19 +32,93 @@ cc-neovim/
 ├── README.md # This file
 
 ```
-## 🔧 Installation
+## 📦 Dependencies
 
+CC-Neovim requires only a few system packages to provide full IDE-like functionality in a headless environment.
+
+### ✅ Core Requirements
+- **Neovim 0.9+** – main editor
+- **git** – for plugin management
+- **unzip** – required for certain plugin installs
+
+### 🛠 Development Tools
+- **clangd** – C/C++ language server
+- **cmake** – recommended for C++ project builds
+- **gdb** – debugger integration
+
+### 🔍 Search Utilities
+- **ripgrep (rg)** – fast project-wide search
+- **fd** – file finder used by Telescope and other pickers
+
+### 🌀 Build Helpers
+- **make** – speeds up build tasks
+
+### 🌙 Optional (but Recommended)
+- **lua-language-server** – improves Neovim’s built-in Lua LSP, making editing `init.lua` and config modules much smoother
+- **glow** - markdown preview, no GUI required
+
+## 🔹 Installing Dependencies
+
+### Fedora
 ```bash
-git clone https://github.com/yourusername/cc-neovim ~/.config/nvim
+sudo dnf install neovim git unzip glow clang-tools-extra cmake gdb make ripgrep fd-find lua-language-server
 ```
 
-Make sure you have:
+### Ubuntu/Debian
+```bash
+sudo apt install neovim git unzip clangd cmake gdb make ripgrep fd-find lua-language-server
+```
+### 📌 Note on Lua Language lua-language-server
 
-- Neovim v0.9+
+Some distributions ship outdated or broken versions of `lua-language-server`.
+If the package from your package manager doesn’t work, you can build it manually:
 
-- clangd and lua-language-server in your $PATH
+### ✅ Lua Language Server (Manual Install)
 
-- Git, C compiler, and your usual dev tools
+Follow these commads in order:
+```
+git clone https://github.com/LuaLS/lua-language-server.git ~/.config/lua-language-server
+```
+```
+cd ~/.config/lua-language-server
+```
+```
+git submodule update --init --recursive
+```
+```
+export PATH="$HOME/.config/lua-language-server/bin:$PATH"
+```
+You can make this change permanent by adding that line to your `~/.bashrc` or `~/.zshrc`.
+
+## 🔧 Installating cc-neovim (READ BEFORE INSTALLING)
+
+Neovim loads configuration from `~/.config/nvim` by default.
+If you already have a config there, you should **back it up first** before cloning or creating a symlink.
+
+### 🛡️ Backup Existing Config
+```bash
+mv ~/.config/nvim ~/.config/nvim.backup.$(date +%Y%m%d)
+```
+
+### 🔗 Option 1: Symlink
+
+Clone cc-neovim anywhere, and symlink the path to the cc-neovim repo. (do not just copy and paste, you need to type your own path.)
+
+```bash
+git clone https://github.com/zimmerman-dev/cc-neovim.git
+```
+*Then:*
+```bash
+ln -s /path/to/cc-neovim ~/.config/nvim
+```
+
+### 📥 Option 2: Clone Directly to ~/.config/nvim
+
+Alternatively, clone straight into the Neovim config directory:
+
+```bash
+git clone https://github.com/zimmerman-dev/cc-neovim.git ~/.config/nvim
+```
 
 Then launch Neovim:
 
@@ -60,14 +134,11 @@ Lazy.nvim will install your plugins automatically on first launch.
 | `SPC f s`            | Normal       | Save file                              |
 | `SPC q q`            | Normal       | Quit Neovim                            |
 | `SPC f f`            | Normal       | Fuzzy find files (Telescope)           |
-| `SPC h t`            | Normal       | Open horizontal terminal               |
-| `SPC v t`            | Normal       | Open vertical terminal                 |
-| `<Tab>`              | Insert/Snippet | Jump to next snippet placeholder     |
-| `<S-Tab>`            | Insert/Snippet | Jump to previous snippet placeholder |
-| `<Up>` / `<Down>`    | Insert       | Navigate completion menu               |
-| `<Right>` / `<CR>`   | Insert       | Confirm selection from completion menu |
+| `SPC t t`            | Normal       | Open horizontal terminal               |
+| `SPC t v`            | Normal       | Open vertical terminal                 |
 | `<Esc>`              | Terminal     | Exit terminal mode                     |
-| `:tabn` / `:tabp`    | Normal       | Switch to next / previous tab          |
+
+**Full list in `cc-neovim/docs`, but you can customize yourself in `lua/core/keymaps.lua`**
 
 
 ## ✍️ Custom Snippets
@@ -80,21 +151,21 @@ snippets/cpp/init.lua
 
 ```
 
-## 📜 License 
+## 📜 License
 This project is licensed under the MIT License.
 
 ---
 
 ### 🪪 Credits
 
-CC-Neovim was built with inspiration from the Neovim and Doom Emacs ecosystems.  
+CC-Neovim was built with inspiration from the Neovim and Doom Emacs ecosystems.
 Special thanks to the developers behind:
 
-- [lazy.nvim](https://github.com/folke/lazy.nvim) for fast plugin management  
-- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) for completion  
-- [LuaSnip](https://github.com/L3MON4D3/LuaSnip) for custom snippet support  
-- [tokyonight.nvim](https://github.com/folke/tokyonight.nvim) for the beautiful colorscheme  
-- [dashboard-nvim](https://github.com/nvimdev/dashboard-nvim) for the clean start screen  
+- [lazy.nvim](https://github.com/folke/lazy.nvim) for fast plugin management
+- [nvim-cmp](https://github.com/hrsh7th/nvim-cmp) for completion
+- [LuaSnip](https://github.com/L3MON4D3/LuaSnip) for custom snippet support
+- [tokyonight.nvim](https://github.com/folke/tokyonight.nvim) for the beautiful colorscheme
+- [dashboard-nvim](https://github.com/nvimdev/dashboard-nvim) for the clean start screen
 - And the wider Neovim community for tools, documentation, and a hacker's spirit
 
 CC-Neovim is crafted for terminal-first C++ development — minimal, modular, and yours to fork.

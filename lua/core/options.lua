@@ -40,4 +40,3 @@ opt.splitbelow = true              -- Horizontal splits below
 
 -- Completion
 opt.completeopt = { "menu", "menuone", "noselect" }  -- Completion behavior
-

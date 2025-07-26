@@ -86,9 +86,8 @@ map("n", "<leader>e", vim.diagnostic.open_float, opt("Unveil the whispers of the
 
 -- editor
 
--- Escape Snippet <C-CR>
-
-map("i", "<C-Space>", function()
+-- Escape closures <C-Space> (works without LuaSnip)
+map("i", "<C-]>", function()
   local line = vim.fn.getline(".")
   local col = vim.fn.col(".")
   local rest = line:sub(col, #line)
@@ -103,15 +102,5 @@ map("i", "<C-Space>", function()
   else
     vim.api.nvim_feedkeys(" ", "n", false)
   end
-end, opt("Slip beyond the closing sigils and into the void"))
-
--- Escape closures <C-SPC>
-
-local ls = require("luasnip")
-
-map("i", "<C-CR>", function()
-  if ls.expand_or_jumpable() then
-    ls.unlink_current()
-  end
-end, opt("Flee the snippet’s grasp but remain in the realm of insertion"))
+end, opt("Jump out of surrounding closures"))
 
