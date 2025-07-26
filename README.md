@@ -1,5 +1,5 @@
 rp align="center">
-    <img src="assets/cc-neovim.jpg" alt="cc-neovim logo" />
+    <img src="docs/assets/cc-neovim1.png" alt="cc-neovim logo" />
 </p>
 
 [![GitHub Pages](https://img.shields.io/badge/View%20Site-cc--neovim-blue?style=flat-square)](https://zimmerman-dev.github.io/cc-neovim)
