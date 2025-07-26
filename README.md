@@ -17,8 +17,8 @@ _Modular, headless-first Neovim configuration built for fast, minimalist C/C++ d
 - **Readable keymaps** – consistent `(SPC key key)` leader-based shortcuts
 - **Beautiful colorscheme** – Tokyo Night with centered dashboard branding
 
-
----
+<br>
+<br>
 
 ### 📁 Project Structure
 
