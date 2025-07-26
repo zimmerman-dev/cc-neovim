@@ -4,11 +4,13 @@
 [![GitHub Pages](https://img.shields.io/badge/View%20Site-cc--neovim-blue?style=flat-square)](https://zimmerman-dev.github.io/cc-neovim)
 ![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 ![Version](https://img.shields.io/github/v/tag/zimmerman-dev/cc-neovim?label=version&style=flat-square)
+<p/>
 
 _Modular, headless-first Neovim configuration built for fast, minimalist C/C++ development._
 
-### ✨ Features
+---
 
+### ✨ Features
 
 - **Minimalist UI** – a clean, distraction-free terminal interface
 - **Fast startup** – powered by lazy-loaded modular plugins
@@ -17,11 +19,11 @@ _Modular, headless-first Neovim configuration built for fast, minimalist C/C++ d
 - **Readable keymaps** – consistent `(SPC key key)` leader-based shortcuts
 - **Beautiful colorscheme** – Tokyo Night with centered dashboard branding
 
-<br>
-<br>
+                                                                                                                    <br>
+                                                                                                                    <br>
 
 ### 📁 Project Structure
-
+                                                                                                                    <br>
 
 ```
 cc-neovim/
@@ -37,7 +39,7 @@ cc-neovim/
 ├── README.md # This file
 
 ```
-
+ <br>
 
 ---
 
@@ -45,6 +47,7 @@ cc-neovim/
 
 CC-Neovim requires only a few system packages to provide full IDE-like functionality in a headless environment.
 
+ <br>
 
 #### ✅ Core Requirements
 - **Neovim 0.9+** – main editor
@@ -67,10 +70,11 @@ CC-Neovim requires only a few system packages to provide full IDE-like functiona
 - **lua-language-server** – improves Neovim’s built-in Lua LSP, making editing `init.lua` and config modules much smoother
 - **glow** - markdown preview, no GUI required
 
-
+ <br>
 
 ### 🔹 Installing Dependencies
 
+ <br>
 
 #### Fedora
 ```bash
@@ -82,7 +86,7 @@ sudo dnf install neovim git unzip glow clang-tools-extra cmake gdb make ripgrep 
 sudo apt install neovim git unzip clangd cmake gdb make ripgrep fd-find lua-language-server
 ```
 
-
+ <br>
 
 #### 📌 Note on Lua Language lua-language-server
 
@@ -110,7 +114,7 @@ You can make this change permanent by adding that line to your `~/.bashrc` or `~
 
 ---
 
-
+<br>
 ### 🔧 Installating cc-neovim (READ BEFORE INSTALLING)
 
 Neovim loads configuration from `~/.config/nvim` by default.
@@ -151,6 +155,7 @@ nvim
 Lazy.nvim will install your plugins automatically on first launch.
 
 
+ <br>
 
 ---
 
@@ -168,8 +173,7 @@ Lazy.nvim will install your plugins automatically on first launch.
 **Full list in `cc-neovim/docs`, but you can customize yourself in `lua/core/keymaps.lua`**
 
 
-
----
+ <br>
 
 ### ✍️ Custom Snippets
 
@@ -184,10 +188,11 @@ snippets/cpp/init.lua
 
 ---
 
+ <br>
+
 ### 📜 License
 This project is licensed under the MIT License.
 
----
 
 ### 🪪 Credits
 
