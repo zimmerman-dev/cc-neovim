@@ -5,7 +5,7 @@ rp align="center">
 [![GitHub Pages](https://img.shields.io/badge/View%20Site-cc--neovim-blue?style=flat-square)](https://zimmerman-dev.github.io/cc-neovim)  ![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)   ![Version](https://img.shields.io/github/v/tag/zimmerman-dev/cc-neovim?label=version&style=flat-square)
 
 _Modular, headless-first Neovim configuration built for fast, minimalist C/C++ development._
-___
+
 # ✨ Features
 
 - **Minimalist UI** – a clean, distraction-free terminal interface
@@ -14,7 +14,7 @@ ___
 - **Insert-ready terminal splits** – open horizontal or vertical terminals in insert mode
 - **Readable keymaps** – consistent `(SPC key key)` leader-based shortcuts
 - **Beautiful colorscheme** – Tokyo Night with centered dashboard branding
-___
+
 # 📁 Project Structure
 
 ```
@@ -31,33 +31,33 @@ cc-neovim/
 ├── README.md # This file
 
 ```
- ___
+
 # 📦 Dependencies List
 
 CC-Neovim requires only a few system packages to provide full IDE-like functionality in a headless environment.
 
->[!note] ✅ Core Requirements
+>✅ Core Requirements
 > - **Neovim 0.9+** – main editor
 > - **git** – for plugin management
 > - **unzip** – required for certain plugin installs
 
->[!note] 🛠 Development Tools
->-  **clangd** – C/C++ language server
+>🛠 Development Tools
+> -  **clangd** – C/C++ language server
 > - **cmake** – recommended for C++ project builds
 > - **gdb** – debugger integration
 
->[!note] 🔍 Search Utilities
+>🔍 Search Utilities
 > - **ripgrep (rg)** – fast project-wide search
 > - **fd** – file finder used by Telescope and other pickers
 
->[!note] 🌀 Build Helpers
->- **make** – speeds up build tasks
+>🌀 Build Helpers
+> - **make** – speeds up build tasks
 
->[!note] 🌙 Optional (but Recommended)
+>🌙 Optional (but Recommended)
 > - **lua-language-server** – improves Neovim’s built-in Lua LSP, making editing `init.lua` and config modules much smoother
 > - **glow** - markdown preview, no GUI required
 
----
+
 # 🔹 Installing Dependencies
 
 #### Fedora
@@ -69,7 +69,7 @@ sudo dnf install neovim git unzip glow clang-tools-extra cmake gdb make ripgrep 
 ```bash
 sudo apt install neovim git unzip clangd cmake gdb make ripgrep fd-find lua-language-server
 ```
-___
+
 # 📌 Note on Lua Language lua-language-server
 
 Some distributions ship outdated or broken versions of `lua-language-server`.
@@ -92,7 +92,8 @@ export PATH="$HOME/.config/lua-language-server/bin:$PATH"
 ```
 
 You can make this change permanent by adding that line to your `~/.bashrc` or `~/.zshrc`.
-___
+
+
 # 🔧 Installing cc-neovim (MUST READ)
 
 Neovim loads configuration from `~/.config/nvim` by default.
@@ -128,7 +129,8 @@ nvim
 ```
 
 Lazy.nvim will install your plugins automatically on first launch.
-___
+
+
 ### 🎹 Key-bindings
 
 | Keybinding | Mode(s)  | Description                  |
@@ -141,7 +143,8 @@ ___
 | `<Esc>`    | Terminal | Exit terminal mode           |
 
 **Full list in `cc-neovim/docs`, but you can customize yourself in `lua/core/keymaps.lua`**
-___
+
+
 ### ✍️ Custom Snippets
 
 You’ll find LuaSnip-powered C/C++ snippets under:
@@ -151,7 +154,7 @@ snippets/c/init.lua
 snippets/cpp/init.lua
 
 ```
-___
+
 ### 🪪 Credits
 
 CC-Neovim was built with inspiration from the Neovim and Doom Emacs ecosystems.
@@ -166,6 +169,6 @@ Special thanks to the developers behind:
 
  **📜 License**
 This project is licensed under the MIT License.
-___
+
 
 *cc-neovim is crafted for terminal-first C++ development — minimal, modular, and yours to fork.*
