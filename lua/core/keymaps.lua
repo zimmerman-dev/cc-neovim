@@ -19,7 +19,7 @@ map("n", "<leader>qq", "<cmd>q<CR>", opt("Retreat from this Realm")) -- Quit
 map("n", "<leader>dd", "<cmd>Dashboard<CR>", opt("Step into the dreamlands")) -- Open Dashboard
 map("n", "<leader>fn", ":enew<CR>", opt("Summon a fresh page from the void")) -- New file
 map("n", "<leader>QQ", ":q!<CR>", opt("He that breaks a thing to find out what it is, has left the path of wisdom")) -- Quit unsaved
-map("n", "<leader>sr", ":%s//gc<Left><Left><Left>", opt("Speak a new name, and the old shall fade from all the pages")) -- Search and Replace
+map("n", "<leader>sr", ":%s///gc<Left><Left><Left><Left>", opt("Speak a new name, and the old shall fade from all the pages")) -- Search and Replace
 
 -- Window Resize with Ctrl + h/j/k/l
 
