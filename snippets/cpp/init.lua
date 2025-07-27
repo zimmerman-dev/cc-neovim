@@ -6,7 +6,7 @@ local i = ls.insert_node
 return {
   -- Basic main function snippet
   s("main", {
-    t({ "#include <iostream>", "", "int main() {", "    " }),
+    t({ "int main() {", "    " }),
     i(0),
     t({ "", "    return 0;", "}" }),
   }),

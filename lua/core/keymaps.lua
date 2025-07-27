@@ -15,7 +15,7 @@ vim.g.maplocalleader = " "
 
 map("n", "<Esc>", "<cmd>noh<CR>", opt("Banish the lingering specters of your last search")) -- Clear search highlight
 map("n", "<leader>fs", "<cmd>w<CR>", opt("Seal your work in runes of permanence")) -- File save
-map("n", "<leader>qq", "<cmd>q<CR>", opt("Retreat from this Realm")) -- Quit 
+map("n", "<leader>qq", "<cmd>q<CR>", opt("Retreat from this Realm")) -- Quit
 map("n", "<leader>dd", "<cmd>Dashboard<CR>", opt("Step into the dreamlands")) -- Open Dashboard
 map("n", "<leader>fn", ":enew<CR>", opt("Summon a fresh page from the void")) -- New file
 map("n", "<leader>QQ", ":q!<CR>", opt("He that breaks a thing to find out what it is, has left the path of wisdom")) -- Quit unsaved
@@ -95,7 +95,7 @@ map("i", "<C-]>", function()
 
   if closing then
     vim.api.nvim_feedkeys(
-      vim.api.nvim_replace_termcodes("<Right>", true, false, true):rep(#closing) .. " ",
+      vim.api.nvim_replace_termcodes("<Right>", true, false, true):rep(#closing),
       "n",
       false
     )

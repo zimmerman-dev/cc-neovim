@@ -20,13 +20,14 @@ opt.autoindent = true              -- Maintain indentation on new lines
 
 -- Editing
 opt.wrap = false                   -- Disable line wrapping
-opt.clipboard = "unnamedplus"     -- Use system clipboard
+opt.clipboard = "unnamedplus"      -- Use system clipboard
 opt.mouse = "a"                    -- Enable mouse support
 opt.undofile = true                -- Persistent undo
 opt.backup = false                 -- No backup files
-opt.swapfile = false              -- No swap files
-opt.updatetime = 300              -- Faster completion
-opt.timeoutlen = 500              -- Shorter wait time for mapped sequences
+opt.swapfile = false               -- No swap files
+opt.updatetime = 300               -- Faster completion
+opt.timeoutlen = 500               -- Shorter wait time for mapped sequences
+opt.whichwrap:append("<,>")        -- Allow left/right arrow to wrap across lines
 
 -- Search
 opt.ignorecase = true              -- Ignore case when searching
