@@ -87,7 +87,7 @@ map("n", "<leader>e", vim.diagnostic.open_float, opt("Unveil the whispers of the
 -- editor
 
 -- Escape closures <C-Space> (works without LuaSnip)
-map("i", "<C-]>", function()
+map("i", "<C-Space>", function()
   local line = vim.fn.getline(".")
   local col = vim.fn.col(".")
   local rest = line:sub(col, #line)

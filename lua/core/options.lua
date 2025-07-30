@@ -19,7 +19,7 @@ opt.smartindent = true             -- Autoindent new lines
 opt.autoindent = true              -- Maintain indentation on new lines
 
 -- Editing
-opt.wrap = false                   -- Disable line wrapping
+-- opt.wrap = false                   -- Disable line wrapping
 opt.clipboard = "unnamedplus"      -- Use system clipboard
 opt.mouse = "a"                    -- Enable mouse support
 opt.undofile = true                -- Persistent undo

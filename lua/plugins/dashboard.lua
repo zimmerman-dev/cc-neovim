@@ -45,7 +45,7 @@ return {
                                                             end,
                                                          },
           { icon = "🕘 ", desc = "Recent Files          ", action = "Telescope oldfiles" },
-          { icon = "⚙️  ", desc = "Edit Config           ", action = "edit ~/projects/cc-neovim" },
+          { icon = "⚙️ ", desc = "Edit Config           ", action = "edit ~/projects/cc-neovim" },
           { icon = "🚪 ", desc = "Quit                  ", action = "qa" },
         },
       },

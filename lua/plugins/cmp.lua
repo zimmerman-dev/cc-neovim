@@ -11,7 +11,7 @@ return {
   },
   config = function()
     local cmp = require("cmp")
-    local luasnip = require("luasnip") 
+    local luasnip = require("luasnip")
 
     cmp.setup({
       snippet = {
@@ -27,10 +27,10 @@ return {
 
         -- Confirm with Enter or Right
         ["<CR>"] = cmp.mapping.confirm({ select = true }),
-        ["<Right>"] = cmp.mapping.confirm({ select = true }),
+--        ["<Right>"] = cmp.mapping.confirm({ select = true }),
 
         -- Manual trigger
-        ["<C-Space>"] = cmp.mapping.complete(),
+--        ["<C->"] = cmp.mapping.complete(),
 
         -- Tab / Shift-Tab for snippet placeholders
         ["<Tab>"] = cmp.mapping(function(fallback)
