@@ -92,7 +92,7 @@ Keybindings are grouped by category for easy reference.
 
 | Keybinding     | Mode   | Action                                   |
 |----------------|--------|------------------------------------------|
-| `<C-]>`        | Insert | Jump out of surrounding closures         |
+| `<C-SPACE>`    | Insert | Jump out of surrounding closures         |
 | `<C-j>`        | Insert | Exit snippet without leaving insert mode |
 
 ---
