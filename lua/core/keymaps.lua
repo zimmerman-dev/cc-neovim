@@ -91,7 +91,7 @@ map("i", "<C-Space>", function()
   local line = vim.fn.getline(".")
   local col = vim.fn.col(".")
   local rest = line:sub(col, #line)
-  local closing = rest:match("^([%)%]%}\"'>]+)")
+  local closing = rest:match("^([%)%]%}\"'`>]+)")
 
   if closing then
     vim.api.nvim_feedkeys(
