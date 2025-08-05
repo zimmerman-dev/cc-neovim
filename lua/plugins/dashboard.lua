@@ -36,16 +36,9 @@ return {
         center = {
           { icon = "📝 ", desc = "New File              ", action = "enew", },
           { icon = "🔍 ", desc = "Find File             ", action = "Telescope find_files" },
-          { icon = "📁 ", desc = "Open Projects Folder  ", action = function()
-                                                             require("telescope").extensions.file_browser.file_browser({
-                                                               path = "~/projects",
-                                                               depth = 1,
-                                                               grouped = true,
-                                                             })
-                                                            end,
-                                                         },
+          { icon = "📁 ", desc = "Open Projects Folder  ", action = function() require("telescope").extensions.file_browser.file_browser({path = "~/projects", depth = 1, grouped = true}) end,},
           { icon = "🕘 ", desc = "Recent Files          ", action = "Telescope oldfiles" },
-          { icon = "⚙️ ", desc = "Edit Config           ", action = "edit ~/projects/cc-neovim" },
+          { icon = "⚙️ ", desc = "Edit Config           ", action = function() require("telescope").extensions.file_browser.file_browser({ path = vim.fn.stdpath("config"), grouped = true }) end },
           { icon = "🚪 ", desc = "Quit                  ", action = "qa" },
         },
       },

@@ -130,6 +130,21 @@ nvim
 
 Lazy.nvim will install your plugins automatically on first launch.
 
+#### Note on Git:
+
+After cloning:
+
+- **For personal use (recommended):**
+
+Remove Git tracking so you can freely tweak the config without Git warnings:
+
+```
+rm -rf ~/.config/nvim/.git
+```
+- **For contributing to CC‑Neovim:**
+
+Fork the repository on GitHub and clone your fork. This keeps Git tracking intact so you can push changes and submit PRs upstream.
+
 
 ### 🎹 Key-bindings
 
