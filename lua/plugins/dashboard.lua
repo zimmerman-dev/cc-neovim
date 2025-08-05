@@ -39,6 +39,7 @@ return {
           { icon = "📁 ", desc = "Open Projects Folder  ", action = function() require("telescope").extensions.file_browser.file_browser({path = "~/projects", depth = 1, grouped = true}) end,},
           { icon = "🕘 ", desc = "Recent Files          ", action = "Telescope oldfiles" },
           { icon = "⚙️ ", desc = "Edit Config           ", action = function() require("telescope").extensions.file_browser.file_browser({ path = vim.fn.stdpath("config"), grouped = true }) end },
+          { icon = "💤 ", desc = "Manage Plugins        ", action = "Lazy" },
           { icon = "🚪 ", desc = "Quit                  ", action = "qa" },
         },
       },
