@@ -34,6 +34,7 @@ return {
 "",
             },
         center = {
+          { icon = "🗺️ ", desc = "<spc km> Keymaps"},
           { icon = "📝 ", desc = "New File              ", action = "enew", },
           { icon = "🔍 ", desc = "Find File             ", action = "Telescope find_files" },
           { icon = "📁 ", desc = "Open Projects Folder  ", action = function() require("telescope").extensions.file_browser.file_browser({path = "~/projects", depth = 1, grouped = true}) end,},

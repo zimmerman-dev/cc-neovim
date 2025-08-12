@@ -53,6 +53,27 @@ map("n", "<leader>tv", function()
   vim.cmd("startinsert")
 end, { desc = "Cleave the void and walk beneath worlds" })
 
+--  Open Keymaps
+
+--map("n", "<leader>km", function()
+--  local git_root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
+-- local file = git_root .. "/docs/keymaps.md"
+
+--  if vim.fn.filereadable(file) == 1 then
+--    vim.cmd.edit(file)
+--  else
+--    vim.notify("keymaps.md not found in repository", vim.log.levels.WARN)
+--  end
+--end, opt("Keeper of keys... and maps!"))
+
+map("n", "<leader>km", function()
+  local file = vim.fn.stdpath("config") .. "/docs/keymaps.md"
+  if vim.fn.filereadable(file) == 1 then
+    vim.cmd.edit(vim.fn.fnameescape(file))
+  else
+    vim.notify("docs/keymaps.md not found in " .. vim.fn.stdpath("config"), vim.log.levels.WARN)
+  end
+end, opt("Open keymaps doc"))
 
 -- Buffers
 
