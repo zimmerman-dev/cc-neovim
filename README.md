@@ -4,7 +4,7 @@ rp align="center">
 
 [![GitHub Pages](https://img.shields.io/badge/View%20Site-cc--neovim-blue?style=flat-square)](https://zimmerman-dev.github.io/cc-neovim)  ![License: MIT](https://img.shields.io/badge/License-MIT-green?style=flat-square)   ![Version](https://img.shields.io/github/v/tag/zimmerman-dev/cc-neovim?label=version&style=flat-square)
 
-_Modular, headless-first Neovim configuration built for fast, minimalist C/C++ development._
+_Modular, minimalist-first Neovim configuration built for fast, minimalist C/C++ development._
 
 # ✨ Features
 
@@ -34,7 +34,7 @@ cc-neovim/
 
 # 📦 Dependencies List
 
-CC-Neovim requires only a few system packages to provide full IDE-like functionality in a headless environment.
+CC-Neovim requires only a few system packages to provide full IDE-like functionality in a minimalist environment.
 
 >✅ Core Requirements
 > - **Neovim 0.9+** – main editor
