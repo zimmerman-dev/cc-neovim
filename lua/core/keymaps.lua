@@ -105,7 +105,43 @@ map("n", "<leader>rn", vim.lsp.buf.rename, opt("Bestow a new, secret name upon i
 map("n", "<leader>ca", vim.lsp.buf.code_action, opt("Invoke the rites of transformation"))
 map("n", "<leader>e", vim.diagnostic.open_float, opt("Unveil the whispers of the unseen"))
 
--- editor
+-- DAP Keymaps (Debugging)
+vim.keymap.set("n", "<F5>", function()
+  require("dap").continue()
+end, { desc = "Debug: Start/Continue" })
+
+-- Step over / into / out
+vim.keymap.set("n", "<F10>", function()
+  require("dap").step_over()
+end, { desc = "Debug: Step Over" })
+
+vim.keymap.set("n", "<F11>", function()
+  require("dap").step_into()
+end, { desc = "Debug: Step Into" })
+
+vim.keymap.set("n", "<F12>", function()
+  require("dap").step_out()
+end, { desc = "Debug: Step Out" })
+
+-- Toggle breakpoint
+vim.keymap.set("n", "<Leader>db", function()
+  require("dap").toggle_breakpoint()
+end, { desc = "Debug: Toggle Breakpoint" })
+
+-- Set conditional breakpoint
+vim.keymap.set("n", "<Leader>dB", function()
+  require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))
+end, { desc = "Debug: Set Conditional Breakpoint" })
+
+-- Open/close dap-ui panel
+vim.keymap.set("n", "<Leader>du", function()
+  require("dapui").toggle()
+end, { desc = "Debug: Toggle UI" })
+
+-- Terminate session
+vim.keymap.set("n", "<Leader>dQ", function()
+  require("dap").terminate()
+end, { desc = "Debug: Quit Debugger" })
 
 -- Escape closures <C-Space> (works without LuaSnip)
 map("i", "<C-Space>", function()

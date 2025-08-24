@@ -11,4 +11,5 @@ return {
   require("plugins.autopairs"),
   require("plugins.luasnip"),
   require("plugins.dashboard"),
+  require("plugins.debug"),
 }

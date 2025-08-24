@@ -1,0 +1,59 @@
+-- =============================
+-- nvim-dap keymaps (stable)
+-- =============================
+local ok_dap, dap = pcall(require, "dap")
+local ok_ui,  dapui = pcall(require, "dapui")
+if not (ok_dap and ok_ui) then return end
+
+-- in case something else grabbed <Leader>dq
+pcall(vim.keymap.del, "n", "<Leader>dq")
+
+local function map(lhs, rhs, desc)
+  vim.keymap.set("n", lhs, rhs, { noremap = true, silent = true, desc = desc })
+end
+
+-- Core
+map("<Leader>dc", function() dap.continue() end,  "Debug: Continue/Start")
+map("<Leader>dp", function() dap.pause() end,     "Debug: Pause")
+map("<Leader>dQ", function() dap.terminate() end, "Debug: Terminate")  -- <- use dQ
+
+-- Stepping (leader-first beats terminal F-key grabs)
+map("<Leader>do", function() dap.step_over() end, "Debug: Step Over")
+map("<Leader>di", function() dap.step_into() end, "Debug: Step Into")
+map("<Leader>dO", function() dap.step_out() end,  "Debug: Step Out")
+
+-- Optional F-keys
+map("<F5>",  function() dap.continue() end,       "Debug: Continue/Start")
+map("<F10>", function() dap.step_over() end,      "Debug: Step Over")
+map("<F11>", function() dap.step_into() end,      "Debug: Step Into")
+map("<F12>", function() dap.step_out() end,       "Debug: Step Out")
+
+-- Breakpoints
+map("<Leader>db", function() dap.toggle_breakpoint() end, "Debug: Toggle Breakpoint")
+map("<Leader>dB", function()
+  dap.set_breakpoint(vim.fn.input("Breakpoint condition: "))
+end, "Debug: Conditional Breakpoint")
+map("<Leader>dl", function()
+  dap.set_breakpoint(nil, nil, vim.fn.input("Log point message: "))
+end, "Debug: Log Point")
+
+-- UI & REPL
+map("<Leader>du", function() dapui.toggle() end,  "Debug: Toggle UI")
+map("<Leader>de", function() dap.repl.toggle() end, "Debug: Toggle REPL")
+
+-- Restart (works on old/new nvim-dap)
+map("<Leader>dr", function()
+  if type(dap.restart) == "function" then
+    dap.restart()
+  else
+    dap.terminate()
+    vim.defer_fn(function()
+      if type(dap.run_last) == "function" then
+        dap.run_last()
+      else
+        dap.continue()
+      end
+    end, 120)
+  end
+end, "Debug: Restart Session")
+
