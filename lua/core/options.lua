@@ -12,8 +12,8 @@ opt.scrolloff = 8                  -- Keep cursor 8 lines away from screen edge
 opt.pumheight = 7                  -- Limit pop-up menu height
 
 -- Indentation
-opt.tabstop = 4                    -- Number of spaces a tab counts for
-opt.shiftwidth = 4                 -- Number of spaces for each indentation
+opt.tabstop = 2                    -- Number of spaces a tab counts for
+opt.shiftwidth = 2                 -- Number of spaces for each indentation
 opt.expandtab = true               -- Convert tabs to spaces
 opt.smartindent = true             -- Autoindent new lines
 opt.autoindent = true              -- Maintain indentation on new lines
