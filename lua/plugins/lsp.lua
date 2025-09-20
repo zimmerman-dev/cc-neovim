@@ -3,16 +3,15 @@
 return {
   "neovim/nvim-lspconfig",
   config = function()
-    local lspconfig = require("lspconfig")
+    vim.lsp.enable("clangd", {}) -- C++
 
-    lspconfig.clangd.setup {} -- C/C++
-    lspconfig.lua_ls.setup {  -- Optional: Lua support
+    vim.lsp.enable("lua_ls", {   -- Lua
       settings = {
         Lua = {
           diagnostics = { globals = { "vim" } },
         },
       },
-    }
+    })
   end,
 }
 
