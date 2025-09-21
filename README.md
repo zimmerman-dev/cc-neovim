@@ -1,4 +1,4 @@
-rp align="center">
+<p align="center">
     <img src="docs/assets/cc-neovim1.png" alt="cc-neovim logo" />
 </p>
 
@@ -6,7 +6,7 @@ rp align="center">
 
 _Modular, minimalist-first Neovim configuration built for fast, minimalist C/C++ development._
 
-# ✨ Features
+# Features
 
 - **Minimalist UI** – a clean, distraction-free terminal interface
 - **Fast startup** – powered by lazy-loaded modular plugins
@@ -15,7 +15,7 @@ _Modular, minimalist-first Neovim configuration built for fast, minimalist C/C++
 - **Readable keymaps** – consistent `(SPC key key)` leader-based shortcuts
 - **Beautiful colorscheme** – Tokyo Night with centered dashboard branding
 
-# 📁 Project Structure
+# Project Structure
 
 ```
 cc-neovim/
@@ -32,37 +32,37 @@ cc-neovim/
 
 ```
 
-# 📦 Dependencies List
+# Dependencies List
 
 CC-Neovim requires only a few system packages to provide full IDE-like functionality in a minimalist environment.
 
->✅ Core Requirements
+> Core Requirements
 > - **Neovim 0.9+** – main editor
 > - **git** – for plugin management
 > - **unzip** – required for certain plugin installs
 
->🛠 Development Tools
+> Development Tools
 > -  **clangd** – C/C++ language server
 > - **cmake** – recommended for C++ project builds
 > - **gdb** – debugger integration
 
->🔍 Search Utilities
+> Search Utilities
 > - **ripgrep (rg)** – fast project-wide search
 > - **fd** – file finder used by Telescope and other pickers
 
->🌀 Build Helpers
+> Build Helpers
 > - **make** – speeds up build tasks
 
->🌙 Optional (but Recommended)
+> Optional (but Recommended)
 > - **lua-language-server** – improves Neovim’s built-in Lua LSP, making editing `init.lua` and config modules much smoother
 > - **glow** - markdown preview, no GUI required
 
 
-# 🔹 Installing Dependencies
+# Installing Dependencies
 
 #### Fedora
 ```bash
-sudo dnf install neovim git unzip glow clang-tools-extra cmake gdb make ripgrep fd-find lua-language-server
+sudo dnf install neovim git unzip glow clang-tools-extra cmake gdb make ripgrep fd-find
 ```
 
 #### Ubuntu/Debian
@@ -70,12 +70,12 @@ sudo dnf install neovim git unzip glow clang-tools-extra cmake gdb make ripgrep 
 sudo apt install neovim git unzip clangd cmake gdb make ripgrep fd-find lua-language-server
 ```
 
-# 📌 Note on Lua Language lua-language-server
+# Note on Lua Language lua-language-server
 
 Some distributions ship outdated or broken versions of `lua-language-server`.
 If the package from your package manager doesn’t work, you can build it manually:
 
-### ✅ Lua Language Server (Manual Install)
+### Lua Language Server (Manual Install)
 
 Follow these commands in order:
 ```
@@ -94,17 +94,17 @@ export PATH="$HOME/.config/lua-language-server/bin:$PATH"
 You can make this change permanent by adding that line to your `~/.bashrc` or `~/.zshrc`.
 
 
-# 🔧 Installing cc-neovim (MUST READ)
+# Installing cc-neovim (MUST READ)
 
 Neovim loads configuration from `~/.config/nvim` by default.
 If you already have a config there, you should **back it up first** before cloning or creating a symlink.
 
-## 🛡️ Backup Existing Config
+## Backup Existing Config
 ```bash
 mv ~/.config/nvim ~/.config/nvim.backup.$(date +%Y%m%d)
 ```
 
-#### 🔗 Option 1: Symlink
+#### Option 1: Symlink
 
 Clone cc-neovim anywhere, and symlink the path to the cc-neovim repo. (do not just copy and paste, you need to type your own path.)
 ```bash
@@ -116,7 +116,7 @@ git clone https://github.com/zimmerman-dev/cc-neovim.git
 ln -s /path/to/cc-neovim ~/.config/nvim
 ```
 
-#### 📥 Option 2: Clone Directly to ~/.config/nvim
+#### Option 2: Clone Directly to ~/.config/nvim
 
 Alternatively, clone straight into the Neovim config directory:
 ```bash
@@ -146,7 +146,7 @@ rm -rf ~/.config/nvim/.git
 Fork the repository on GitHub and clone your fork. This keeps Git tracking intact so you can push changes and submit PRs upstream.
 
 
-### 🎹 Key-bindings
+### Key-bindings
 
 | Keybinding | Mode(s)  | Description                  |
 | ---------- | -------- | ---------------------------- |
@@ -160,7 +160,7 @@ Fork the repository on GitHub and clone your fork. This keeps Git tracking intac
 **Full list in `cc-neovim/docs`, but you can customize yourself in `lua/core/keymaps.lua`**
 
 
-### ✍️ Custom Snippets
+### Custom Snippets
 
 You’ll find LuaSnip-powered C/C++ snippets under:
 
@@ -170,7 +170,7 @@ snippets/cpp/init.lua
 
 ```
 
-### 🪪 Credits
+### Credits
 
 CC-Neovim was built with inspiration from the Neovim and Doom Emacs ecosystems.
 Special thanks to the developers behind:
@@ -182,7 +182,7 @@ Special thanks to the developers behind:
 - [dashboard-nvim](https://github.com/nvimdev/dashboard-nvim) for the clean start screen
 - And the wider Neovim community for tools, documentation, and a hacker's spirit
 
- **📜 License**
+ **License**
 This project is licensed under the MIT License.
 
 
