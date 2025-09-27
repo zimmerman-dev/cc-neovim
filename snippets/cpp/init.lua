@@ -7,9 +7,9 @@ return {
   -- Basic main function snippet
   s("main", {
     t("int main() {"),
-    t({ "", "    " }),
+    t({ "", "  " }),
     i(0),
-    t({ "", "    return 0;", "}" }),
+    t({ "", "  return 0;", "}" }),
   }),
 
   -- A "for" loop snippet
@@ -17,7 +17,7 @@ return {
     t("for (int i{0}; i < "),
     i(1, "n"),
     t("; ++i) {"),
-    t({ "", "    " }),
+    t({ "", "  " }),
     i(0),
     t({ "", "}" }),
   }),
@@ -39,7 +39,7 @@ return {
     t("("),
     i(3),
     t(") {"),
-    t({ "", "    " }),
+    t({ "", "  " }),
     i(0),
     t({ "", "}" }),
   }),
