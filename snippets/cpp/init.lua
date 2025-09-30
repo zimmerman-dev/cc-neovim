@@ -48,7 +48,6 @@ return {
   s("cout", {
     t("std::cout << "),
     i(1, "_"),
-    t(" << std::endl;"),
   }),
 
   -- Switch
