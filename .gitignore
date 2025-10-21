@@ -3,4 +3,5 @@
 *.un~
 *.log
 session.*
+lazy-lock.json
 nvim-data/
