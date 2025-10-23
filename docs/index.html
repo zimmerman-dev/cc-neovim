@@ -183,17 +183,23 @@ input[type="radio"] {
   display: block;
 }
 
-/* basic layout and nav styles */
+.slides {
+  position: relative;
+  width: 100%;
+  max-width: 720px;
+  overflow: hidden;
+  margin: 0 auto;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
 .slides img {
-  width: 300px;
-  backdrop-filter: blur(10px);
+  width: 100%;
   height: auto;
   border-radius: 0.75rem;
-  max-width: 720px; /* bigger image */
-  width: 100%;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
-  margin-bottom: 1.2rem;
+  display: block;
 }
+
+
 
 .controls {
   display: flex;
@@ -299,7 +305,7 @@ input[type="radio"] {
   <div class="slide" id="slide2"> <img src="assets/sample2.PNG"> </div>
   <div class="slide" id="slide3"> <img src="assets/sample3.PNG"> </div>
   <div class="slide" id="slide4"> <img src="assets/sample7.PNG"> </div>
-  <div class="slide" id="slide5"> <img src="assets/sample4.PNG"> </div>
+  <div class="slide" id="slide5"> <img src="assets/sample1.PNG"> </div>
 </div>
 
 <div class="controls">
