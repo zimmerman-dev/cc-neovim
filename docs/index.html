@@ -162,6 +162,91 @@
         max-width: 90%;
       }
     }
+   
+  
+
+    /* hide the radios */
+input[type="radio"] {
+  display: none;
+}
+
+/* show only the selected slide */
+.slide {
+  display: none;
+}
+
+#s1:checked ~ .slides #slide1,
+#s2:checked ~ .slides #slide2,
+#s3:checked ~ .slides #slide3,
+#s4:checked ~ .slides #slide4,
+#s5:checked ~ .slides #slide5 {
+  display: block;
+}
+
+/* basic layout and nav styles */
+.slides img {
+  width: 300px;
+  backdrop-filter: blur(10px);
+  height: auto;
+  border-radius: 0.75rem;
+  max-width: 720px; /* bigger image */
+  width: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  margin-bottom: 1.2rem;
+}
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.controls label {
+  padding: 8px 16px;
+  background: #24283b;         /* button background */
+  color: #c0caf5;              /* text color */
+  border: 1px solid #565f89;   /* subtle border */
+  border-radius: 6px;
+  margin: 0 4px;
+  cursor: pointer;
+  transition: transform 0.1s ease, box-shadow 0.2s ease;
+}
+
+.controls label:hover {
+  background: #7aa2f7;         /* blue highlight */
+  color: #1a1b26;              /* invert text on hover */
+  border-color: #7aa2f7;
+  box-shadow: 0 0 10px #7aa2f7aa;
+}
+
+.controls label:active {
+  background: #888
+}
+.carousel {
+  margin-top: 2rem;
+  text-align: center;
+}
+.carousel-title {
+  text-align: center;
+  color: #9ece6a;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;  /* adds spacing below the title */
+  margin-top: 10rem;    /* optional: adds spacing above the title */
+}
+
+.carousel-wrapper {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Per-button colors */
+.controls label:nth-child(1) { background: #7aa2f7; } 
+.controls label:nth-child(2) { background: #bb9af7; } 
+.controls label:nth-child(3) { background: #7dcfff; } 
+.controls label:nth-child(4) { background: #9ece6a; } 
+.controls label:nth-child(5) { background: #f7768e; } 
+
   </style>
 </head>
 <body>
@@ -197,6 +282,34 @@
         <tr><td>SPC q q</td><td>Quit Neovim</td></tr>
       </table>
     </div>
+  </div>
+
+  <div class="carousel-wrapper">
+  <h2 class="carousel-title">Sample Images</h2>
+  <div class="carousel">  
+
+<input type="radio" name="slider" id="s1" checked hidden>
+<input type="radio" name="slider" id="s2" hidden>
+<input type="radio" name="slider" id="s3" hidden>
+<input type="radio" name="slider" id="s4" hidden>
+<input type="radio" name="slider" id="s5" hidden>
+
+<div class="slides">
+  <div class="slide" id="slide1"> <img src="assets/sample6.PNG"> </div>
+  <div class="slide" id="slide2"> <img src="assets/sample2.PNG"> </div>
+  <div class="slide" id="slide3"> <img src="assets/sample3.PNG"> </div>
+  <div class="slide" id="slide4"> <img src="assets/sample7.PNG"> </div>
+  <div class="slide" id="slide5"> <img src="assets/sample4.PNG"> </div>
+</div>
+
+<div class="controls">
+  <label for="s1">1</label>
+  <label for="s2">2</label>
+  <label for="s3">3</label>
+  <label for="s4">4</label>
+  <label for="s5">5</label>
+</div>
+</div>
   </div>
 
   <footer>
