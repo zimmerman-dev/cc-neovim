@@ -12,6 +12,9 @@ return {
         "vim",
         "bash",
         "cmake",
+        "javascript",
+        "html",
+        "css",
         -- add more as needed
       },
       highlight = {
