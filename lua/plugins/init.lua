@@ -13,4 +13,5 @@ return {
   require("plugins.luasnip"),
   require("plugins.dashboard"),
   require("plugins.debug"),
+  require("plugins.jdtls"),
 }
