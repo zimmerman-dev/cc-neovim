@@ -39,5 +39,8 @@ opt.hlsearch = true                -- Highlight search matches
 opt.splitright = true              -- Vertical splits to the right
 opt.splitbelow = true              -- Horizontal splits below
 
+-- Tab bar
+-- opt.showtabline = 2
+
 -- Completion
 opt.completeopt = { "menu", "menuone", "noselect" }  -- Completion behavior

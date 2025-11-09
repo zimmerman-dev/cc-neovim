@@ -15,4 +15,5 @@ return {
   require("plugins.debug"),
   require("plugins.jdtls"),
   require("plugins.autotag"),
+  require("plugins.bufferline"),
 }
