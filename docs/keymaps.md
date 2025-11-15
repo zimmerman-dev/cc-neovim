@@ -5,7 +5,7 @@ Keybindings are grouped by category for easy reference.
 
 ---
 
-### 🎯 General
+### General
 
 | Keybinding        | Mode   | Action                        |
 |-------------------|--------|-------------------------------|
@@ -19,7 +19,7 @@ Keybindings are grouped by category for easy reference.
 
 ---
 
-### 🪟 Window Management
+### Window Management
 
 | Keybinding   | Mode   | Action                              |
 |--------------|--------|-------------------------------------|
@@ -30,7 +30,7 @@ Keybindings are grouped by category for easy reference.
 
 ---
 
-### 🗂 Tabs
+### Tabs
 
 | Keybinding        | Mode   | Action                              |
 |-------------------|--------|-------------------------------------|
@@ -42,7 +42,7 @@ Keybindings are grouped by category for easy reference.
 
 ---
 
-### 💻 Terminals
+### Terminals
 
 | Keybinding        | Mode   | Action                              |
 |-------------------|--------|-------------------------------------|
@@ -51,7 +51,7 @@ Keybindings are grouped by category for easy reference.
 
 ---
 
-### 📄 Buffers
+### Buffers
 
 | Keybinding        | Mode   | Action                              |
 |-------------------|--------|-------------------------------------|
@@ -61,7 +61,7 @@ Keybindings are grouped by category for easy reference.
 
 ---
 
-### 🔍 Telescope
+### Telescope
 
 | Keybinding        | Mode   | Action                              |
 |-------------------|--------|-------------------------------------|
@@ -73,7 +73,7 @@ Keybindings are grouped by category for easy reference.
 
 ---
 
-### ⚙️ LSP (Language Server Protocol)
+### LSP (Language Server Protocol)
 
 | Keybinding        | Mode   | Action                              |
 |-------------------|--------|-------------------------------------|
@@ -88,7 +88,7 @@ Keybindings are grouped by category for easy reference.
 
 ---
 
-### 🖋️ Insert Mode Enhancements
+### Insert Mode Enhancements
 
 | Keybinding     | Mode   | Action                                   |
 |----------------|--------|------------------------------------------|
