@@ -4,7 +4,7 @@ return {
   config = function()
     require("lualine").setup {
       options = {
-        theme = "vague",
+        theme = "tokyonight",
         section_separators = "",
         component_separators = "",
       },
