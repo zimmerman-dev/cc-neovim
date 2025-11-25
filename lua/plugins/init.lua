@@ -1,6 +1,8 @@
 -- lua/plugins/init.lua
 
 return {
+  require("plugins.mason"),
+  require("plugins.mason_lspconfig"),
   require("plugins.treesitter"),
   require("plugins.telescope"),
   require("plugins.plenary"),
