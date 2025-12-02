@@ -1,7 +1,4 @@
-
 -- init.lua
-
-
 
 -- Bootstrap lazy.nvim
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
@@ -18,4 +15,10 @@ vim.opt.rtp:prepend(lazypath)
 require("core.options")
 require("core.keymaps")
 require("core.autocommands")
+
+-- Load custom Obsidian-style link handler (this is your new line)
+require("core.obsidian_links")
+
+-- Load Lazy.nvim plugins
 require("core.lazy")
+
