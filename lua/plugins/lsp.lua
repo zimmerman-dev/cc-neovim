@@ -14,7 +14,7 @@ return {
       },
     })
 
-    vim.lsp.enable("ts_ls", { -- ✅ Modern replacement for tsserver
+    vim.lsp.enable("ts_ls", { --  Modern replacement for tsserver
       root_dir = require("lspconfig.util").root_pattern("package.json", ".git"),
     })
 

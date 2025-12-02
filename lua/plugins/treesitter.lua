@@ -15,6 +15,7 @@ return {
         "javascript",
         "html",
         "css",
+        "java",
         -- add more as needed
       },
       highlight = {
