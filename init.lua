@@ -17,7 +17,7 @@ require("core.keymaps")
 require("core.autocommands")
 
 -- Load custom Obsidian-style link handler (this is your new line)
-require("core.obsidian_links")
+require("core.obsidian_links").setup()
 
 -- Load Lazy.nvim plugins
 require("core.lazy")
