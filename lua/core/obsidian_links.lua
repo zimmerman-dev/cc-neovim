@@ -3,6 +3,7 @@
 -- - <CR> on a link opens target in a new real tab
 -- - <CR> elsewhere behaves normally
 -- - Supports aliases: [[file.md|alias]]
+-- - Resolves [[file]] -> file.md when possible
 
 local M = {}
 
@@ -18,9 +19,8 @@ local function get_wikilink_under_cursor()
     if not s then return nil end
 
     if col >= s and col <= e then
-      -- inner is like "file.md" or "file.md|alias"
       inner = inner:gsub("^%s+", ""):gsub("%s+$", "") -- trim
-      local target = inner:match("([^|]+)") or inner  -- strip alias portion
+      local target = inner:match("([^|]+)") or inner -- strip alias
       target = target:gsub("^%s+", ""):gsub("%s+$", "")
       if target == "" then return nil end
       return target
@@ -30,28 +30,51 @@ local function get_wikilink_under_cursor()
   end
 end
 
+-- Resolve a wiki link to an existing file if possible
+local function resolve_wikilink(target)
+  -- 1. Exact match
+  if vim.fn.filereadable(target) == 1 then
+    return target
+  end
+
+  -- 2. Try adding .md
+  if vim.fn.filereadable(target .. ".md") == 1 then
+    return target .. ".md"
+  end
+
+  -- 3. Recursive search for target.md
+  local matches = vim.fn.glob("**/" .. target .. ".md", true, true)
+  if #matches == 1 then
+    return matches[1]
+  end
+
+  -- 4. Fallback: let Neovim create a new file
+  return target
+end
+
 function M.setup()
-  -- Only set the mapping for markdown-like buffers.
   vim.api.nvim_create_autocmd("FileType", {
     pattern = { "markdown", "md", "markdown.pandoc" },
     callback = function(ev)
-      -- <CR> mapping local to markdown buffers
       vim.keymap.set("n", "<CR>", function()
         local target = get_wikilink_under_cursor()
         if target then
-          -- Open in a new real tab
-          vim.cmd("tabnew " .. vim.fn.fnameescape(target))
+          local resolved = resolve_wikilink(target)
+          vim.cmd("tabnew " .. vim.fn.fnameescape(resolved))
         else
-          -- Default Enter behavior
           vim.cmd("normal! <CR>")
         end
-      end, { silent = true, buffer = ev.buf, desc = "Open [[wiki link]] in tab" })
+      end, {
+        silent = true,
+        buffer = ev.buf,
+        desc = "Open [[wiki link]] in tab",
+      })
 
-      -- Highlight group for wiki links
-      -- You can tweak fg to match your theme; underline keeps it obvious.
-      vim.api.nvim_set_hl(0, "ObsidianWikiLink", { fg = "#7aa2f7", underline = true })
+      vim.api.nvim_set_hl(0, "ObsidianWikiLink", {
+        fg = "#7aa2f7",
+        underline = true,
+      })
 
-      -- Basic syntax match for [[...]]
       vim.cmd([[
         syntax match ObsidianWikiLink /\[\[.\{-}\]\]/
       ]])
