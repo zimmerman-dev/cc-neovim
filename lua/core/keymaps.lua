@@ -1,7 +1,5 @@
 local map = vim.keymap.set
 
--- Replace opts with a helper function
-
 local function opt(desc)
   return { noremap = true, silent = true, desc = desc }
 end
@@ -13,15 +11,15 @@ vim.g.maplocalleader = " "
 
 -- General
 
-map("n", "<Esc>", "<cmd>noh<CR>", opt("Banish the lingering specters of your last search")) -- Clear search highlight
-map("n", "<leader>fs", "<cmd>w<CR>", opt("Seal your work in runes of permanence")) -- File save
-map("n", "<leader>qq", "<cmd>q<CR>", opt("Retreat from this Realm")) -- Quit
-map("n", "<leader>dd", "<cmd>Dashboard<CR>", opt("Step into the dreamlands")) -- Open Dashboard
-map("n", "<leader>fn", ":enew<CR>", opt("Summon a fresh page from the void")) -- New file
-map("n", "<leader>QQ", ":q!<CR>", opt("He that breaks a thing to find out what it is, has left the path of wisdom")) -- Quit unsaved
-map("n", "<leader>sr", ":%s///gc<Left><Left><Left><Left>", opt("Speak a new name, and the old shall fade from all the pages")) -- Search and Replace
+map("n", "<Esc>", "<cmd>noh<CR>", opt("Banish the lingering specters of your last search"))
+map("n", "<leader>fs", "<cmd>w<CR>", opt("Seal your work in runes of permanence"))
+map("n", "<leader>qq", "<cmd>q<CR>", opt("Retreat from this Realm"))
+map("n", "<leader>dd", "<cmd>Dashboard<CR>", opt("Step into the dreamlands"))
+map("n", "<leader>fn", ":enew<CR>", opt("Summon a fresh page from the void"))
+map("n", "<leader>QQ", ":q!<CR>", opt("He that breaks a thing to find out what it is, has left the path of wisdom"))
+map("n", "<leader>sr", ":%s///gc<Left><Left><Left><Left>", opt("Speak a new name, and the old shall fade from all the pages"))
 
--- Window Resize with Ctrl + h/j/k/l
+-- Window Resize with Ctrl + arrow keys
 
 map("n", "<C-Left>", ":vertical resize -2<CR>", opt("Bend the walls of this chamber to your will"))
 map("n", "<C-Right>", ":vertical resize +2<CR>", opt("Bend the walls of this chamber to your will"))
@@ -30,41 +28,28 @@ map("n", "<C-Up>", ":resize -2<CR>", opt("Bend the walls of this chamber to your
 
 -- Tab navigation
 
-map("n", "<leader>tn", "<Cmd>tabnew<CR>", opt("Open a new gate into unknown lands")) -- New tab
-map("n", "<leader>tc", "<Cmd>tabclose<CR>", opt("Collapse the gate and seal what lies beyond"))  -- Close tab
-map("n", "<leader>to", "<Cmd>tabonly<CR>", opt("Burn it all down"))       -- Close all but current tab
+map("n", "<leader>tn", "<Cmd>tabnew<CR>", opt("Open a new gate into unknown lands"))
+map("n", "<leader>tc", "<Cmd>tabclose<CR>", opt("Collapse the gate and seal what lies beyond"))
+map("n", "<leader>to", "<Cmd>tabonly<CR>", opt("Burn it all down"))
 
--- Cycle through tabs <Tab> - <S/Tab>
+-- Cycle through tabs
 
 map("n", "<Tab>", "gt", opt("Step through the shifting dimensions"))
 map("n", "<S-Tab>", "gT", opt("Step through the shifting dimensions"))
 
--- Open horizontal terminal split: <leader>tt
+-- Terminal splits
 
 map("n", "<leader>tt", function()
   vim.cmd("split | terminal")
   vim.cmd("startinsert")
-end, { desc = "Split the earth and descend" })
-
--- Open vertical terminal split: <leader>tv
+end, opt("Split the earth and descend"))
 
 map("n", "<leader>tv", function()
   vim.cmd("vsplit | terminal")
   vim.cmd("startinsert")
-end, { desc = "Cleave the void and walk beneath worlds" })
+end, opt("Cleave the void and walk beneath worlds"))
 
---  Open Keymaps
-
---map("n", "<leader>km", function()
---  local git_root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
--- local file = git_root .. "/docs/keymaps.md"
-
---  if vim.fn.filereadable(file) == 1 then
---    vim.cmd.edit(file)
---  else
---    vim.notify("keymaps.md not found in repository", vim.log.levels.WARN)
---  end
---end, opt("Keeper of keys... and maps!"))
+-- Open keymaps doc
 
 map("n", "<leader>km", function()
   local file = vim.fn.stdpath("config") .. "/docs/keymaps.md"
@@ -77,7 +62,7 @@ end, opt("Open keymaps doc"))
 
 -- Buffers
 
-map("n", "<leader>bn", ":bnext<CR>", opt("Turn the page of this eldritch tome")) -- Cycle through buffers
+map("n", "<leader>bn", ":bnext<CR>", opt("Turn the page of this eldritch tome"))
 map("n", "<leader>bp", ":bprevious<CR>", opt("Trace backward through forbidden texts"))
 map("n", "<leader>bd", ":bdelete<CR>", opt("Cast it into the fire! Destroy it!"))
 
@@ -85,7 +70,7 @@ map("n", "<leader>bd", ":bdelete<CR>", opt("Cast it into the fire! Destroy it!")
 
 map("n", "<leader>fd", function()
   require("telescope.builtin").find_files({
-    cwd = vim.fn.expand("%:p:h"),  -- current file's directory
+    cwd = vim.fn.expand("%:p:h"),
   })
 end, opt("Reveal the hidden paths of this directory"))
 
@@ -94,56 +79,42 @@ map("n", "<leader>fg", "<cmd>Telescope live_grep<CR>", opt("Whisper into the aby
 map("n", "<leader>fb", "<cmd>Telescope buffers<CR>", opt("Where did I leave that buffer...?"))
 map("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", opt("Consult the ancient scrolls"))
 
--- LSP
-
-map("n", "gd", vim.lsp.buf.definition, opt("Step through the threshhold to its origin"))
-map("n", "K", vim.lsp.buf.hover, opt("Gaze upon the forbidden knowledge"))
-map("n", "gr", vim.lsp.buf.references, opt("Summon all who speak its accursed name"))
-map("n", "[d", vim.diagnostic.goto_prev, opt("Head the echoes of past warnings"))
-map("n", "]d", vim.diagnostic.goto_next, opt("Follow the whispers of impending doom"))
-map("n", "<leader>rn", vim.lsp.buf.rename, opt("Bestow a new, secret name upon it"))
-map("n", "<leader>ca", vim.lsp.buf.code_action, opt("Invoke the rites of transformation"))
-map("n", "<leader>e", vim.diagnostic.open_float, opt("Unveil the whispers of the unseen"))
-
 -- DAP Keymaps (Debugging)
-vim.keymap.set("n", "<F5>", function()
+
+map("n", "<F5>", function()
   require("dap").continue()
-end, { desc = "Debug: Start/Continue" })
+end, opt("Invoke the debugger spirit, let it run free"))
 
--- Step over / into / out
-vim.keymap.set("n", "<F10>", function()
+map("n", "<F10>", function()
   require("dap").step_over()
-end, { desc = "Debug: Step Over" })
+end, opt("Stride over the lesser incantation"))
 
-vim.keymap.set("n", "<F11>", function()
+map("n", "<F11>", function()
   require("dap").step_into()
-end, { desc = "Debug: Step Into" })
+end, opt("Descend into the depths of the calling ritual"))
 
-vim.keymap.set("n", "<F12>", function()
+map("n", "<F12>", function()
   require("dap").step_out()
-end, { desc = "Debug: Step Out" })
+end, opt("Ascend from the depths, return to the outer rite"))
 
--- Toggle breakpoint
-vim.keymap.set("n", "<Leader>db", function()
+map("n", "<Leader>db", function()
   require("dap").toggle_breakpoint()
-end, { desc = "Debug: Toggle Breakpoint" })
+end, opt("Mark this place where the spirits shall pause"))
 
--- Set conditional breakpoint
-vim.keymap.set("n", "<Leader>dB", function()
+map("n", "<Leader>dB", function()
   require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))
-end, { desc = "Debug: Set Conditional Breakpoint" })
+end, opt("Bind the spirits with a conditional sigil"))
 
--- Open/close dap-ui panel
-vim.keymap.set("n", "<Leader>du", function()
+map("n", "<Leader>du", function()
   require("dapui").toggle()
-end, { desc = "Debug: Toggle UI" })
+end, opt("Raise or banish the scrying window of the debugger"))
 
--- Terminate session
-vim.keymap.set("n", "<Leader>dQ", function()
+map("n", "<Leader>dQ", function()
   require("dap").terminate()
-end, { desc = "Debug: Quit Debugger" })
+end, opt("Banish the debugger spirit back to the void"))
 
--- Escape closures <C-Space> (works without LuaSnip)
+-- Escape closures <C-Space>
+
 map("i", "<C-Space>", function()
   local line = vim.fn.getline(".")
   local col = vim.fn.col(".")
@@ -161,3 +132,12 @@ map("i", "<C-Space>", function()
   end
 end, opt("Jump out of surrounding closures"))
 
+-- LuaSnip: exit snippet without leaving insert mode
+
+map("i", "<C-j>", function()
+  local ls = require("luasnip")
+  local current = ls.session and ls.session.current_nodes[vim.api.nvim_get_current_buf()]
+  if current then
+    ls.unlink_current()
+  end
+end, opt("Sever the thread and escape the snippet's grasp"))
